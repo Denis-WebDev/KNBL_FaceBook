@@ -1,10 +1,10 @@
 'use client';
 
-import styles from './postCard.module.scss';
+import styles from './PostCard.module.scss';
 
 const PostCard = ({ post }) => {
   const data = post.attachments.data[0];
-  console.log(data);
+  
   return (
     <li className={styles.card}>
       <div className={styles.card_textCont}>
