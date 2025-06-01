@@ -18,8 +18,6 @@ const FacebookPosts = ({ user }) => {
         setPosts(postsData.data);
       } catch (error) {
         console.log(error);
-
-        setPosts([]);
       }
 
       return;
