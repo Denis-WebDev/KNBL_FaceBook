@@ -8,7 +8,9 @@ const Wrapper = ({ user }) => {
   return (
     <>
       <Header user={user} />
-      <div className="container">{/* <FacebookPosts user={user} /> */}</div>
+      <div className="container">
+        <FacebookPosts user={user} />
+      </div>
       <Modal />
     </>
   );
