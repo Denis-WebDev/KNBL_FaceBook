@@ -2,9 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],
-      "auth": ["./src/config/auth-config"],
-      "i18n": ["./src/translate/i18nConfig.js"],
-      "getDictionary": ["./src/translate/lib/dictionary.js"]
+      "auth": ["./src/config/auth-config"]
     }
   }
 }
