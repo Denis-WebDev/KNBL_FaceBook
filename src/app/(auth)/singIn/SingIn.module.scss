@@ -1,0 +1,214 @@
+.singIn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+
+  background-color: #dcebf7;
+}
+
+.modalCont {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+}
+
+.modal {
+  border-radius: 8px;
+  background: #fff;
+
+  padding: 40px 24px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
+
+  & > h1 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+
+    color: #3e85f3;
+    text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07), 0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
+
+    @media (min-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  & > ul {
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 100%;
+    padding: 0;
+
+    list-style-type: none;
+
+    @media (min-width: 768px) {
+      margin-top: 32px;
+      gap: 18px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-top: 32px;
+      gap: 18px;
+    }
+
+    & > li {
+      position: relative;
+
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 8px;
+
+      width: 100%;
+
+      & label {
+        font-size: 12px;
+        font-weight: 600;
+
+        color: #111;
+
+        transition: color 300ms linear;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      }
+      & input {
+        width: 100%;
+        height: 46px;
+        padding: 14px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        color: #111;
+
+        border-radius: 8px;
+        border: 1px solid rgba(220, 227, 229, 0.6);
+        outline: none;
+
+        transition: border 300ms linear;
+
+        @media (min-width: 768px) {
+          padding: 18px;
+          font-size: 16px;
+        }
+
+        &:focus {
+          border: 1px solid #3e85f3;
+        }
+
+        &:not(:placeholder-shown):not(:focus):invalid {
+          border: 1px solid red;
+
+          & + label {
+            color: red;
+          }
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:focus {
+          transition: background-color 0s 600000s, color 0s 600000s;
+        }
+      }
+    }
+  }
+
+  & > button {
+    position: relative;
+    margin-top: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 46px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px; /* 128.571% */
+    letter-spacing: -0.28px;
+    color: #fff;
+
+    border: none;
+    border-radius: 16px;
+    background: #3e85f3;
+    box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.48);
+    outline: none;
+
+    cursor: pointer;
+    transition: background-color 300ms linear;
+
+    @media (min-width: 768px) {
+      margin-top: 48px;
+      height: 56px;
+
+      font-size: 18px;
+      line-height: 24px; /* 133.333% */
+      letter-spacing: -0.36px;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #0c5cd3;
+      }
+    }
+
+    & > div {
+      display: block;
+      width: 18px;
+      height: 18px;
+
+      background-image: url(./assets/LogIn.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      @media (min-width: 768px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.link {
+  margin-top: 18px;
+
+  display: block;
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 14px; /* 116.667% */
+
+  color: #3e85f3;
+  text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07), 0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
+  text-decoration-line: underline;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: #0c5cd3;
+    }
+  }
+}
+
