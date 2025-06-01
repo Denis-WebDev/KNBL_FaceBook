@@ -1,0 +1,27 @@
+.wraper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  margin-top: 10px;
+  display: block;
+  
+  width: 100%;
+  height: 100%;
+}
+
+.form_text {
+  width: 100%;
+  height: 200px;
+}
+
+.form_button {
+  margin: 10px 0 0 auto;
+
+  color: #fff;
+
+  border-radius: 8px;
+  background-color: rgb(12, 12, 151);
+}

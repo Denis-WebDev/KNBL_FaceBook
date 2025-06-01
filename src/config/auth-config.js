@@ -9,8 +9,8 @@ var credentialsConfig = CredentialsProvider({
 
     if (email === "denis.webdevil@gmail.com" && password === "denis.webdevil@gmail.com") {
       return {
-        name: "denis.webdevil@gmail.com",
-        rore: "admin",
+        name: "Test Name",
+        email: "denis.webdevil@gmail.com",
         id: "123456",
         image: "/avatar.jpg"
       };
@@ -21,7 +21,13 @@ var credentialsConfig = CredentialsProvider({
 
 var facebookConfig = FacebookProvider({
   clientId: process.env.FACEBOOK_CLIENT_ID,
-  clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+  clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+  authorization: {
+    params: {
+      scope: "public_profile,email,user_posts",
+    },
+  },
+  checks: ["state"],
 });
 
 const config = {
@@ -38,17 +44,18 @@ const config = {
     async signIn({user, account, profile, credentials}) {
 
 
-      if (account.provider === "facebook") {
+      if (account?.provider === "facebook") {
 
-        console.log("user  -- ", user)
-        console.log("profile  -- ", profile)
-        console.log("account  -- ", account)
+        user.token = account.access_token;
+        user.providerId = account.providerAccountId;
+        return user;
       }
-      
+
       return true;
     },
 
-    async jwt({token, user, trigger, session}) {
+    async jwt({token, user}) {
+
       if (user) {
         token.user = user;
       }
