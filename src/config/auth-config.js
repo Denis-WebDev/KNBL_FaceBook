@@ -1,8 +1,9 @@
 
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import FacebookProvider from "next-auth/providers/facebook";
 
-const credentialsConfig = CredentialsProvider({
+var credentialsConfig = CredentialsProvider({
   name: "credentials",
   async authorize({email, password}) {
 
@@ -18,16 +19,35 @@ const credentialsConfig = CredentialsProvider({
   },
 });
 
+var facebookConfig = FacebookProvider({
+  clientId: process.env.FACEBOOK_CLIENT_ID,
+  clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+});
+
 const config = {
   trustHost: true,
   trustHostedDomain: true,
 
-  providers: [credentialsConfig],
+  providers: [credentialsConfig, facebookConfig],
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
-    signIn: "/admin",
+    signIn: "/signIn",
   },
   callbacks: {
+
+    async signIn({user, account, profile, credentials}) {
+
+
+      if (account.provider === "facebook") {
+
+        console.log("user  -- ", user)
+        console.log("profile  -- ", profile)
+        console.log("account  -- ", account)
+      }
+      
+      return true;
+    },
+
     async jwt({token, user, trigger, session}) {
       if (user) {
         token.user = user;
@@ -37,6 +57,9 @@ const config = {
     async session({session, token, user}) {
       session.user = token.user;
       return session;
+    },
+    async redirect() {
+      return "/";
     },
   },
   session: {

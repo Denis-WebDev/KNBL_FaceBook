@@ -33,7 +33,8 @@
     line-height: 24px;
 
     color: #3e85f3;
-    text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07), 0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
+    text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
+      0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
 
     @media (min-width: 768px) {
       font-size: 24px;
@@ -195,7 +196,8 @@
   line-height: 14px; /* 116.667% */
 
   color: #3e85f3;
-  text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07), 0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
+  text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
+    0px 9.4px 57.688px rgba(0, 0, 0, 0.04);
   text-decoration-line: underline;
   cursor: pointer;
 
@@ -212,3 +214,45 @@
   }
 }
 
+.FbLoginBtn {
+  position: relative;
+  margin-top: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  height: 46px;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.28px;
+  color: #fff;
+
+  border: none;
+  border-radius: 16px;
+  background: #3e85f3;
+  box-shadow: 4px 2px 16px 0px rgba(136, 165, 191, 0.48);
+  outline: none;
+
+  cursor: pointer;
+  transition: background-color 300ms linear;
+
+  @media (min-width: 768px) {
+    margin-top: 48px;
+    height: 56px;
+
+    font-size: 18px;
+    line-height: 24px; /* 133.333% */
+    letter-spacing: -0.36px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #0c5cd3;
+    }
+  }
+}

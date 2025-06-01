@@ -9,6 +9,8 @@ const Wrapper = ({ user }) => {
     await singOutActions();
   };
 
+  console.log(user);
+
   return (
     <div>
       ;sksalflsafjlsfjlsd

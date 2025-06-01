@@ -33,6 +33,10 @@ export const singInActions = async (formData) => {
   }
 };
 
+export const signInFacebookAction = async () => {
+  await signIn("facebook", {callbackUrl: "/sadasdas"});
+};
+
 export const singOutActions = async () => {
   await signOut();
 };

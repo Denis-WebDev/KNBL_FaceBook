@@ -2,11 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 
-import { singInActions } from '@/app/actions/auth';
+import { signInFacebookAction, singInActions } from '@/app/actions/auth';
 
-import styles from './SingIn.module.scss';
+import styles from './SignIn.module.scss';
 
-const SingIn = () => {
+const SignIn = () => {
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -16,10 +16,15 @@ const SingIn = () => {
 
     try {
       const res = await singInActions(data);
+      console.log(res);
       res === 200 && router.push('/');
     } catch (error) {
       alert(res.error);
     }
+  };
+
+  var singInFacebook = async () => {
+    await signInFacebookAction();
   };
 
   return (
@@ -60,8 +65,13 @@ const SingIn = () => {
           </button>
         </form>
 
-
-        
+        <button
+          type="button"
+          className={styles.FbLoginBtn}
+          onClick={singInFacebook}
+        >
+          SignIn Facebook
+        </button>
 
         {/* <a className={styles.link} href="/singUp">
           Sing Up
@@ -71,4 +81,4 @@ const SingIn = () => {
   );
 };
 
-export default SingIn;
+export default SignIn;
