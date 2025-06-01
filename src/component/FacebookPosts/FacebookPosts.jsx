@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import styles from './FacebookPosts.module.scss';
-import PostCard from '@/app/ui/postCard/postCard';
+import PostCard from '@/ui/postCard/PostCard';
 
 const FacebookPosts = ({ user }) => {
   const { 0: posts, 1: setPosts } = useState([]);

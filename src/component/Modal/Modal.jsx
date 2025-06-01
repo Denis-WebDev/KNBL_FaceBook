@@ -1,5 +1,5 @@
-import ModalAddPost from '@/app/utils/ModalAddPost/ModalAddPost';
-import ModalWraper from '@/app/utils/ModalWraper/ModalWraper';
+import ModalAddPost from '@/utils/ModalAddPost/ModalAddPost';
+import ModalWraper from '@/utils/ModalWraper/ModalWraper';
 
 const Modal = () => {
   return (
