@@ -23,15 +23,16 @@ const FacebookPosts = ({ user }) => {
       return;
     };
 
-    fetchPost();
+    user?.token && fetchPost();
   }, []);
 
-  return (
-    <ul className={styles.postContainer}>
-      {posts.length > 0 &&
-        posts.map((el) => <PostCard key={el.id} post={el} />)}
-    </ul>
-  );
+  if (!user?.token) return <div>No Token</div>
+    return (
+      <ul className={styles.postContainer}>
+        {posts.length > 0 &&
+          posts.map((el) => <PostCard key={el.id} post={el} />)}
+      </ul>
+    );
 };
 
 export default FacebookPosts;

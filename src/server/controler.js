@@ -5,8 +5,9 @@ export const publishPost = async (req) => {
     if (!session || !session.user)
         throw new Error("no authorized");
 
-    console.log(session.user.token);
-    console.log(req);
+    if (!session.user.token) throw new Error("Np token")
+
+    console.log("acsses_token   ---  ", session.user.token);
 
     try {
         const response = await fetch('https://graph.facebook.com/v23.0/me/feed', {
@@ -20,7 +21,9 @@ export const publishPost = async (req) => {
             }),
         }).then(async (res) => await res.json());
 
-        console.log(response)
+
+        return response
+        
     } catch (error) {
         throw new Error("Errore");
     }
